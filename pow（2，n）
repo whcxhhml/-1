@@ -1,0 +1,4 @@
+          if (n < 0) return 1.0 / myPow(x, -n);
+         if (n == 0) { return 1.0; }
+          double y = myPow(x, n / 2); 
+          return n % 2 == 0 ? y * y : y * y * x;
