@@ -1,0 +1,17 @@
+class Solution {
+public:
+   static bool cmp(int a,int b){
+        string sa = to_string(a);
+        string sb = to_string(b);
+        return sa+sb>sb+sa;
+    }
+
+    string largestNumber(vector<int>& nums) {
+        sort(nums.begin(),nums.end(),cmp);
+        string ret;
+        for(auto num:nums){
+            if(!(num==0&&ret[0]=='0')) ret+=to_string(num);
+        }
+        return ret;
+    }
+};
