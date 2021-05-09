@@ -1,0 +1,17 @@
+import random
+target = random.randint(1,1000)
+count = 0
+while True:
+    try:
+        guess = eval(input('请输入猜测的整数（1-1000）：'))
+        count += 1
+        if guess > target:
+            print("猜大了！")
+        elif guess < target:
+            print("猜小了！")
+        else:
+            print("猜对了！")
+            break
+    except:
+        print("输入有误！请重新输入一个整数！")
+print("此轮猜测次数为：",count)
