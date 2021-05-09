@@ -1,0 +1,13 @@
+def Count(fname, S, count):
+    file = fname + '.txt'
+    f = open(file, 'r', encoding='utf-8')
+    txt = f.read()
+    f.close()
+    print(txt)
+    count = txt.count(S)
+    print('“{}”字符在《{}》中出现的的次数是：{}次'.format(S, fname, count))
+
+fname = input('请输入txt文件名称：')
+S = input('请输入一个字符：')
+count = 0
+Count(fname, S, count)
