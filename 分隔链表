@@ -1,0 +1,25 @@
+class Solution {
+public:
+    ListNode* partition(ListNode* head, int x) {
+        if (head == nullptr) return head;
+
+        ListNode less_head, more_head;
+        ListNode *l_p = &less_head, *m_p = &more_head;
+
+        while (head) {
+            if (head->val < x) {
+                l_p->next = head;
+                l_p = l_p->next;
+            } else {
+                m_p->next = head;
+                m_p = m_p->next;
+            }
+            head = head->next;
+        }
+
+        l_p->next = more_head.next;
+        m_p->next = nullptr;
+
+        return less_head.next;
+    }
+};
